@@ -1,0 +1,22 @@
+.row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.row > * {
+    flex: 1 1 0px;
+    text-align: center;
+}
+
+.heading > * {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.fallback-text {
+    text-align: center;
+    font-size: 1.5rem;
+}

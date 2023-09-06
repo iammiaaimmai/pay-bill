@@ -1,0 +1,16 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.row>* {
+    flex: 1 1 0;
+    margin-bottom: 20px;
+}
+
+.select-label {
+    display: block;
+    margin: 0 0 10px;
+    font-weight: 500;
+}
