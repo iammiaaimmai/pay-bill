@@ -23,7 +23,7 @@ function PersonList({ persons }) {
                             key={person.id}
                         >
                             <p>{person.name}</p>
-                            <p>{person.price}</p>
+                            <p>{person.price.toFixed(2)}</p>
                             <p>{person.iban || 'No IBAN available'}</p>
                         </div>
                     ))}
