@@ -26,12 +26,12 @@ function PayBill() {
     }))
 
     const personSubmitHandler = enteredData => {
+        setPersonFormError(null)
+
         if (!enteredData.match(NAME_REGEX) || enteredData.trim().length < 3) {
             setPersonFormError('Invalid name!')
             return
         }
-
-        setPersonFormError(null)
 
         const applyData = (data) => {
             const [first] = data
@@ -95,7 +95,7 @@ function PayBill() {
                 <AddPersonForm
                     onSubmit={personSubmitHandler}
                     error={personFormError}
-                    onConfirm={() => setPersonFormError(null)}
+                    ONc
                 />
                 {isLoading && <p>Loading...</p>}
                 {fetchError && (
