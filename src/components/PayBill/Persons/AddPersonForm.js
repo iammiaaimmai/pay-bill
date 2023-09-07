@@ -9,7 +9,7 @@ import classes from './AddPersonForm.module.css'
 function AddPersonForm({ onSubmit, error, onConfirm }) {
     const personInputRef = useRef()
 
-    const handleSubmit = e => {
+    const submitHandler = e => {
         e.preventDefault()
 
         onSubmit(personInputRef.current.value)
@@ -20,7 +20,7 @@ function AddPersonForm({ onSubmit, error, onConfirm }) {
         <div className='m-tb'>
             <form
                 className={classes.form}
-                onSubmit={handleSubmit}
+                onSubmit={submitHandler}
             >
                 <Input
                     className={classes.expandable}
