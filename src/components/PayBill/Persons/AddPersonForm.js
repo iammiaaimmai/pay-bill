@@ -2,10 +2,11 @@ import { useRef } from 'react'
 
 import Input from '../../UI/Input'
 import Button from '../../UI/Button'
+import Error from '../../UI/Error'
 
 import classes from './AddPersonForm.module.css'
 
-function AddPersonForm({ onSubmit }) {
+function AddPersonForm({ onSubmit, error, onConfirm }) {
     const personInputRef = useRef()
 
     const handleSubmit = e => {
@@ -34,6 +35,12 @@ function AddPersonForm({ onSubmit }) {
                 />
                 <Button>Add</Button>
             </form>
+            {error && (
+                <Error
+                    message={error}
+                    onConfirm={() => onConfirm()}
+                />
+            )}
         </div>
     )
 }
