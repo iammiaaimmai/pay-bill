@@ -47,7 +47,7 @@ function AddBillForm({ options, onSubmit }) {
 
     return (
         <>
-            <form className='m-tb' onSubmit={submitHandler}>
+            <form onSubmit={submitHandler}>
                 <div className={classes.row}>
                     <Input
                         onChange={changeHandler}

@@ -6,7 +6,7 @@ function Bills({ onSubmit, options, bills }) {
     const submitHandler = submittedData => onSubmit(submittedData)
 
     return (
-        <>
+        <div className='m-tb'>
             {bills.map((bill, i) => (
                 <ShowBills
                     key={i}
@@ -18,7 +18,7 @@ function Bills({ onSubmit, options, bills }) {
                 options={options}
                 onSubmit={submitHandler}
             />
-        </>
+        </div>
     )
 }
 
