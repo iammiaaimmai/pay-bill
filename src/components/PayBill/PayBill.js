@@ -96,7 +96,7 @@ function PayBill() {
                 <AddPersonForm
                     onSubmit={personSubmitHandler}
                     error={personFormError}
-                    ONc
+                    onConfirm={() => setPersonFormError(null)}
                 />
                 {isLoading && <p>Loading...</p>}
                 {fetchError && (
