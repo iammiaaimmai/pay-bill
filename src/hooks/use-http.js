@@ -26,10 +26,13 @@ const useHttp = () => {
         setIsLoading(false)
     }, [])
 
+    const removeError = () => setError(null)
+
     return {
         error,
         isLoading,
-        sendReq
+        sendReq,
+        removeError
     }
 }
 

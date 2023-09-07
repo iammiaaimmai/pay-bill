@@ -6,8 +6,10 @@
 }
 
 .row > * {
+    width: 0;
     flex: 1 1 0px;
     text-align: center;
+    word-break: break-all;
 }
 
 .heading > * {

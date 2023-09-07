@@ -1,10 +1,15 @@
 import classes from './Error.module.css'
 
-function Error({ message }) {
+function Error({ message, onConfirm }) {
     return (
-        <span className={classes.err}>
-            {message ? message : 'Something went wrong!'}
-        </span>
+        <div className={classes.err}>
+            <span>{message ? message : 'Something went wrong!'}</span>
+            <span
+                className={classes['close-btn']}
+                onClick={() => onConfirm && onConfirm()}
+            >
+            </span>
+        </div>
     )
 }
 

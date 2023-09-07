@@ -1,6 +1,6 @@
-import classes from './PersonsList.module.css'
+import classes from './ShowPersons.module.css'
 
-function PersonList({ persons }) {
+function ShowPersons({ persons }) {
     return (
         <div className='m-tb'>
             <div className={`${classes.row} ${classes.heading}`}>
@@ -21,9 +21,10 @@ function PersonList({ persons }) {
                         <div
                             className={classes.row}
                             key={person.id}
+                            id={person.id}
                         >
                             <p>{person.name}</p>
-                            <p>{person.price.toFixed(2)}</p>
+                            <p>{person.total.toFixed(2)}</p>
                             <p>{person.iban || 'No IBAN available'}</p>
                         </div>
                     ))}
@@ -33,4 +34,4 @@ function PersonList({ persons }) {
     )
 }
 
-export default PersonList
+export default ShowPersons

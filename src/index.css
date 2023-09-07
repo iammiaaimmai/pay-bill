@@ -23,6 +23,10 @@ h1 {
     color: #333;
 }
 
+h1 span {
+    color: #FFF;
+}
+
 .m-tb {
     margin: 20px auto;
 }

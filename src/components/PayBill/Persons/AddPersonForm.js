@@ -1,16 +1,16 @@
 import { useRef } from 'react'
 
-import Input from '../UI/Input'
-import Button from '../UI/Button'
-import Error from '../UI/Error'
+import Input from '../../UI/Input'
+import Button from '../../UI/Button'
 
 import classes from './AddPersonForm.module.css'
 
-function AddPersonForm({ onSubmit, error }) {
+function AddPersonForm({ onSubmit }) {
     const personInputRef = useRef()
 
     const handleSubmit = e => {
         e.preventDefault()
+
         onSubmit(personInputRef.current.value)
         personInputRef.current.value = ''
     }
@@ -22,6 +22,7 @@ function AddPersonForm({ onSubmit, error }) {
                 onSubmit={handleSubmit}
             >
                 <Input
+                    className={classes.expandable}
                     ref={personInputRef}
                     label='Add Person'
                     options={{
@@ -33,7 +34,6 @@ function AddPersonForm({ onSubmit, error }) {
                 />
                 <Button>Add</Button>
             </form>
-            {error && <Error message={error} />}
         </div>
     )
 }
