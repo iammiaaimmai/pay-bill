@@ -27,6 +27,7 @@ function PayBill() {
 
     const personSubmitHandler = enteredData => {
         setPersonFormError(null)
+        removeFetchError()
 
         if (!enteredData.match(NAME_REGEX) || enteredData.trim().length < 3) {
             setPersonFormError('Invalid name!')
