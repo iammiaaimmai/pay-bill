@@ -15,9 +15,10 @@ function AddBillForm({ options, onSubmit }) {
     const selectInputRef = useRef()
 
     const changeHandler = e => {
-        setPrice(e.target.value)
+        const priceNum = Number(e.target.value)
+        setPrice(priceNum)
 
-        e.target.value > 0
+        priceNum > 0
             ? setIsSelectDisabled(false)
             : setIsSelectDisabled(true)
     }
@@ -25,19 +26,23 @@ function AddBillForm({ options, onSubmit }) {
     const submitHandler = e => {
         e.preventDefault()
 
+        setError(null)
+
         const selectValue = selectInputRef.current.props.value
-        const isInvalid = price === 0 || selectValue === null || selectValue.length < 2
+        const isInvalid = price <= 0 || selectValue === null || selectValue.length < 2
 
         if (isInvalid) {
-            !price
+            price <= 0
                 ? setError('Price can\'t be 0')
-                : setError('Please select at least two options')
+                : setError('Please select at least two options');
             return
         }
 
-        selectInputRef.current.setValue([])
-        setPrice(0)
         onSubmit({ value: selectValue, total: price })
+
+        setPrice(0)
+        setIsSelectDisabled(true)
+        selectInputRef.current.setValue([])
     }
 
     return (
@@ -49,8 +54,8 @@ function AddBillForm({ options, onSubmit }) {
                         label='Price'
                         options={{
                             type: 'number',
-                            id: `price`,
-                            name: `price`,
+                            id: `price-inp`,
+                            name: `price-inp`,
                             value: price,
                             min: 0
                         }}
@@ -60,8 +65,8 @@ function AddBillForm({ options, onSubmit }) {
                         <Select
                             isMulti
                             options={options}
-                            id={`persons`}
-                            name={`persons`}
+                            id='persons-sel'
+                            name='persons-sel'
                             isDisabled={isSelectDisabled}
                             price={price}
                             ref={selectInputRef}
