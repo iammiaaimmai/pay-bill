@@ -12,7 +12,9 @@ function ShowPersons({ persons }) {
             <hr />
 
             {persons.length === 0 && (
-                <p className={classes['fallback-text']}>Start Sharing Bills. Add People To The List.</p>
+                <p className={classes['fallback-text']}>
+                    Start Sharing Bills. Add People To The List.
+                </p>
             )}
 
             {persons.length > 0 && (

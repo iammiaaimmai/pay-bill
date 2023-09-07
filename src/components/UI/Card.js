@@ -1,13 +1,13 @@
 import classes from './Card.module.css'
 
-const Card = props => {
-    const cardClasses = props.className
-        ? `${classes.card} ${props.className}`
+function Card({ children, className }) {
+    const cardClasses = className
+        ? `${classes.card} ${className}`
         : classes.card
 
     return (
         <div className={cardClasses}>
-            {props.children}
+            {children}
         </div>
     )
 }

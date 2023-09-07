@@ -11,7 +11,6 @@ function Bills({ onSubmit, options, bills }) {
                 <ShowBills
                     key={i}
                     bill={bill}
-                    options={options}
                 />
             ))}
             <AddBillForm

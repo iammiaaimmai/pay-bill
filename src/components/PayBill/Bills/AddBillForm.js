@@ -28,8 +28,8 @@ function AddBillForm({ options, onSubmit }) {
 
         setError(null)
 
-        const selectValue = selectInputRef.current.props.value
-        const isInvalid = price <= 0 || selectValue === null || selectValue.length < 2
+        const selectedValues = selectInputRef.current.props.value
+        const isInvalid = price <= 0 || selectedValues === null || selectedValues.length < 2
 
         if (isInvalid) {
             price <= 0
@@ -38,7 +38,7 @@ function AddBillForm({ options, onSubmit }) {
             return
         }
 
-        onSubmit({ value: selectValue, total: price })
+        onSubmit({ selectedValues, total: price })
 
         setPrice(0)
         setIsSelectDisabled(true)

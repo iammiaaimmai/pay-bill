@@ -66,24 +66,24 @@ function PayBill() {
     }
 
     const billSubmitHandler = data => {
-        const { value, total } = data
-        const selectValues = value.map(obj => obj.value)
+        const { selectedValues, total } = data
+        const selectedIds = selectedValues.map(obj => obj.value)
 
         setBills(prevState => (
             [
                 ...prevState,
                 {
                     total: total,
-                    ids: selectValues
+                    persons: selectedValues
                 }
             ]
         ))
 
         setPersons(prevState => (prevState.map(obj => (
-            selectValues.includes(obj.id)
+            selectedIds.includes(obj.id)
                 ? {
                     ...obj,
-                    total: obj.total + total / value.length
+                    total: obj.total + total / selectedValues.length
                 }
                 : { ...obj }
         ))))

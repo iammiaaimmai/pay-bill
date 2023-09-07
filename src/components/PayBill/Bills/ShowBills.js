@@ -1,18 +1,6 @@
 import classes from './ShowBills.module.css'
 
-function ShowBills({ bill, options }) {
-    const { total, ids } = bill
-    const personsIds = options.map(option => option.value)
-
-    const persons = ids.map(id => {
-        const index = personsIds.indexOf(id)
-        return (
-            <li key={id}>
-                {options[index].label}
-            </li>
-        )
-    })
-
+function ShowBills({ bill: { total, persons } }) {
     return (
         <div className={classes.row}>
             <div >
@@ -22,7 +10,11 @@ function ShowBills({ bill, options }) {
             <div >
                 <p className={classes.heading}>People</p>
                 <ul className={`${classes.list} ${classes.box}`} >
-                    {persons}
+                    {persons.map(person => (
+                        <li key={person.value}>
+                            {person.label}
+                        </li>
+                    ))}
                 </ul>
             </div>
         </div>
