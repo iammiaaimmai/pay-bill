@@ -32,9 +32,10 @@ function AddBillForm({ options, onSubmit }) {
         const isInvalid = price <= 0 || selectedValues === null || selectedValues.length < 2
 
         if (isInvalid) {
-            price <= 0
-                ? setError('Price can\'t be 0')
-                : setError('Please select at least two options');
+            setError(price <= 0
+                ? 'Price can\'t be 0'
+                : 'Please select at least two options'
+            )
             return
         }
 

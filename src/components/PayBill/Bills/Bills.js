@@ -1,7 +1,7 @@
 import AddBillForm from './AddBillForm'
 import ShowBills from './ShowBills'
 
-function Bills({ onSubmit, options, bills }) {
+function Bills({ bills, options, onSubmit }) {
 
     const submitHandler = submittedData => onSubmit(submittedData)
 
