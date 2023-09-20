@@ -2,9 +2,7 @@ import PayBill from './components/PayBill/PayBill'
 
 function App() {
     return (
-        <>
-            <PayBill />
-        </>
+        <PayBill />
     )
 }
 

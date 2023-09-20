@@ -1,10 +1,10 @@
 .form {
-    width: 100%;
-    display: flex;
-    align-items: flex-end;
-    gap: 20px;
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+	gap: 20px;
 }
 
 .expandable {
-    flex-grow: 1;
+	flex-grow: 1;
 }

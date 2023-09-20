@@ -1,24 +1,24 @@
 .row {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
 
 .row > * {
-    width: 0;
-    flex: 1 1 0px;
-    text-align: center;
-    word-break: break-all;
+	width: 0;
+	flex: 1 1 0px;
+	text-align: center;
+	word-break: break-all;
 }
 
 .heading > * {
-    margin: 0;
-    font-size: 1rem;
-    font-weight: 500;
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 .fallback-text {
-    text-align: center;
-    font-size: 1.5rem;
+	text-align: center;
+	font-size: 1.5rem;
 }
